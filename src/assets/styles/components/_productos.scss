@@ -6,7 +6,6 @@
   align-items: center;
   top: 0;
   position: sticky;
-  z-index: 0;
 }
 
 .items-navProductos {
@@ -46,9 +45,6 @@
   display: flex;
 }
 
-
-
-
 body.active-modal {
   overflow-y: hidden;
 }
@@ -64,7 +60,7 @@ body.active-modal {
 // }
 
 .overlay {
-  background: rgba(49,49,49,0.8);
+  background: rgba(49, 49, 49, 0.8);
   width: 400px;
   height: 800px;
 }
@@ -81,24 +77,12 @@ body.active-modal {
   height: 400px;
 }
 
-
 .close-modal {
   position: absolute;
   top: 10px;
   right: 10px;
   padding: 5px 7px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .agregarProducto {
   z-index: 1;
