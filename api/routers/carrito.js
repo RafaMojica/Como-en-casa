@@ -5,9 +5,9 @@ const CarritoController = require("../controllers/CarritoController");
 const validateAuth = require("../middleware/auth");
 
 // me crea un producto en el carrito
-router.post("/", CarritoController.postcarrito);
+router.post("/", validateAuth, CarritoController.postcarrito);
 //me trae todos lo del carrito
-router.get("/", CarritoController.getallcarrito);
+router.get("/", validateAuth, CarritoController.getallcarrito);
 
 // me trae el carrito de un usuario
 
@@ -15,7 +15,7 @@ router.get("/:email", validateAuth, CarritoController.getcarritouser);
 
 //me elimina un producto del carrito
 
-router.delete("/delete/:id", CarritoController.deletecarrito);
+router.delete("/delete/:id", validateAuth, CarritoController.deletecarrito);
 
 //eliminar todo el carrito de un usuario
 router.delete(

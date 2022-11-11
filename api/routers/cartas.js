@@ -5,13 +5,13 @@ const CartasController = require("../controllers/CartasController");
 const validateAuth = require("../middleware/auth");
 
 //creo producto
-router.post("/", CartasController.postcarta);
+router.post("/", validateAuth, CartasController.postcarta);
 
 //me trae todos los productos
-router.get("/", CartasController.getallcartas);
+router.get("/", validateAuth, CartasController.getallcartas);
 
 //me trae un producto
-router.get("/:id", CartasController.getonecarta);
+router.get("/:id", validateAuth, CartasController.getonecarta);
 
 //me edita un producto
 router.put("/:id", validateAuth, CartasController.editonecarta);
