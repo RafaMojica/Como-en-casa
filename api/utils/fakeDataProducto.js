@@ -89,10 +89,10 @@ const products = [
 
   {
     nombre: "Atun con arroz",
-    descripcion: "asdasdasdasdsadadasdasdasdsadsad",
+    descripcion: "Arroz con atun",
     precio: 1200,
     imagen:
-      "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+      "https://cdn.colombia.com/gastronomia/2011/08/22/arroz-con-verduras-y-atun-3141.jpg",
     tipo: "Pescado",
     puntaje: 5,
     stock: 100,

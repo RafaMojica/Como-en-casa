@@ -255,7 +255,7 @@ function Productos() {
                     <option value="Pollo">Pollo</option>
                     <option value="Ensaladas">Ensaladas</option>
                     <option value="Bebidas">Bebitas</option>
-                    <option value="Postres">Posatres</option>
+                    <option value="Postres">Postres</option>
                     <option value="Veganos">Veganos</option>
                   </select>
                   <button onClick={handleSubmit}>Agregar</button>
