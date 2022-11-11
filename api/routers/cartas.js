@@ -8,10 +8,10 @@ const validateAuth = require("../middleware/auth");
 router.post("/", validateAuth, CartasController.postcarta);
 
 //me trae todos los productos
-router.get("/", validateAuth, CartasController.getallcartas);
+router.get("/", CartasController.getallcartas);
 
 //me trae un producto
-router.get("/:id", validateAuth, CartasController.getonecarta);
+router.get("/:id", CartasController.getonecarta);
 
 //me edita un producto
 router.put("/:id", validateAuth, CartasController.editonecarta);
