@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
-
+import usePagination from "../hooks/paginate";
+import Pagination from "@mui/material/Pagination";
 function VistaComentarios() {
   const user = useSelector((state) => state.user);
 
   const [ordenes, setordenes] = useState([]);
   const [comentario, setComentario] = useState("");
   const [puntaje, setPuntaje] = useState("");
+
+  //pagination
+  let [page, setPage] = useState(1);
+  const PER_PAGE = 4;
+
+  const count = Math.ceil(ordenes.length / PER_PAGE);
+  const _DATA = usePagination(ordenes, PER_PAGE);
+
+  const handleChange = (e, p) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
 
   useEffect(() => {
     if (!user.tipo) {
@@ -25,7 +38,15 @@ function VistaComentarios() {
 
   return (
     <div className="containerTabla">
-      {ordenes.map((orden) => {
+      <Pagination
+        count={count}
+        size="large"
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        onChange={handleChange}
+      />
+      {_DATA.currentData().map((orden) => {
         const { nombre, precio, imagen, id } = orden.cartas[0];
         console.log(orden);
         const handleSubmit = (e) => {
@@ -75,7 +96,7 @@ function VistaComentarios() {
                   value="1"
                   onChange={(e) => setPuntaje(e.target.value)}
                 />
-                <label for="rate1">1 star</label>
+                <label for="rate1">1 stars</label>
 
                 <input
                   type="radio"
